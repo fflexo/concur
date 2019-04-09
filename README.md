@@ -17,3 +17,11 @@ With concur we can now write something as short and simple as this:
     find /path/to/big/directory -execdir concur slow_task {} \;
 
 and it'll automatically run one task per CPU.
+
+You can also use this with bash scripting, for example:
+
+    #!/bin/bash
+    for f in $(seq 100) 
+    do
+      concur slow_task $f
+    done

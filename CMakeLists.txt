@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.1)
+project(concur)
+add_executable(concur concur.c)
+install(TARGETS concur DESTINATION bin)
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+target_link_libraries(concur Threads::Threads)
